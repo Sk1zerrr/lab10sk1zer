@@ -1,53 +1,65 @@
 package ua.opnu;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.Arrays;
 
 public class EasyTasks {
 
-    public static void main(String[] args) {
-        // Для виконання лабораторної роботи необхідно написати вміст методів згідно умовам завдання,
-        // після чого протестувати метод за допомогою тестів, які знаходяться в папці
-        // src\test\TaskTest.java
+    // Task 1
+    public static List<Integer> doubling(List<Integer> nums) {
+        return nums.stream()
+                .map(n -> n * 2)
+                .collect(Collectors.toList());
     }
 
-    public List<Integer> doubling(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 2
+    public static List<Integer> square(List<Integer> nums) {
+        return nums.stream()
+                .map(n -> n * n)
+                .collect(Collectors.toList());
     }
 
-    public List<Integer> square(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 3
+    public static List<String> moreY(List<String> strings) {
+        return strings.stream()
+                .map(s -> "y" + s + "y")
+                .collect(Collectors.toList());
     }
 
-    public List<String> moreY(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 4
+    public static List<Integer> noNeg(List<Integer> nums) {
+        return nums.stream()
+                .filter(n -> n >= 0)
+                .collect(Collectors.toList());
     }
 
-    public List<Integer> noNeg(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 5
+    public static List<Integer> no9(List<Integer> nums) {
+        return nums.stream()
+                .filter(n -> n % 10 != 9)
+                .collect(Collectors.toList());
     }
 
-    public List<Integer> no9(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 6
+    public static List<String> noZ(List<String> strings) {
+        return strings.stream()
+                .filter(s -> !s.contains("z"))
+                .collect(Collectors.toList());
     }
 
-    public List<String> noZ(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 7
+    public static List<String> refinedStrings(List<String> strings) {
+        return strings.stream()
+                .distinct()
+                .sorted((a, b) -> b.length() - a.length())
+                .collect(Collectors.toList());
     }
 
-    public List<String> refinedStrings(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+    // Task 8
+    public static List<String> flatten(List<String> names) {
+        return names.stream()
+                .flatMap(s -> Arrays.stream(s.split(" ")))
+                .collect(Collectors.toList());
     }
-
-    public List<String> flatten(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
-    }
-
 }
